@@ -10,6 +10,7 @@ void functionA() {
 	cout << "b= " << b << endl;
 
 	// Add your code here
+	*p = 100;
 
 	cout << "a= " << a << endl;
 	cout << "b= " << b << endl;
