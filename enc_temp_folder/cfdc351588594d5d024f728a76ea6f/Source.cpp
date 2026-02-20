@@ -52,8 +52,8 @@ void functionD() {
 
 int main(int, char**) {
 
-	//functionA();
-	functionB();
+	functionA();
+	//functionB();
 	//functionC();
 	//functionD();
 
