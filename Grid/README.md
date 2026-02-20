@@ -70,5 +70,30 @@ I say this because 10 in hexadecimal is 0A.
 <img width="295" height="85" alt="image" src="https://github.com/user-attachments/assets/a3d2413a-e0f0-47ec-ae59-bb6ac56108bf" />
 Here I have added the code to update the value of the address pointer p is pointing to:
 <img width="180" height="37" alt="image" src="https://github.com/user-attachments/assets/c43a0817-ad83-4aeb-9a74-931220184474" />
-<img width="180" height="37" alt="image" src="https://github.com/user-attachments/assets/c43a0817-ad83-4aeb-9a74-931220184474" />
+Here we can see, that after executing that line, we update the value of a
+<img width="424" height="92" alt="image" src="https://github.com/user-attachments/assets/f48a7839-1758-41be-ac8a-5651b9afc041" />
+
+### Reflection
+a pointer does not store a value, it stores a memory location.
+when we dereference (*p), we are accessing the value At That Location, hence the value that we initially assigned to the variable a, is changed to 100. This is because p stores the address of a, while the value stored at that address is changed by *p = 100e 
+
+Essentially: 
+- passing by reference
+- 	*p = &a - this means that p gets a copy of the address, not the value of a.
+
+# Pointers - False Assumptions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
