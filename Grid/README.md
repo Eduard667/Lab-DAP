@@ -7,10 +7,10 @@
 +-------------------------------------------+
 |                .h File                    |
 |-------------------------------------------|
-|  • Declares class                         |
-|  • Declares methods                       |
-|  • Declares constructors/destructors      |
-|  • No logic                               |
+|  â€¢ Declares class                         |
+|  â€¢ Declares methods                       |
+|  â€¢ Declares constructors/destructors      |
+|  â€¢ No logic                               |
 +-------------------------------------------+
                     |
                     |  included by
@@ -18,9 +18,9 @@
 +-------------------------------------------+
 |                .cpp File                  |
 |-------------------------------------------|
-|  • Implements methods                     |
-|  • Contains logic                         |
-|  • Uses #include "MyClass.h"              |
+|  â€¢ Implements methods                     |
+|  â€¢ Contains logic                         |
+|  â€¢ Uses #include "MyClass.h"              |
 +-------------------------------------------+
 
 
@@ -64,3 +64,11 @@ void Grid::SaveGrid(const char filename[])
 ```
 
 # Basics of Pointers
+Here we confirm the address of *p pointed to by p is indeed "a"
+I say this because 10 in hexadecimal is 0A. 
+<img width="416" height="119" alt="image" src="https://github.com/user-attachments/assets/5e282a62-f5bc-44db-a83d-689166d3413f" />
+<img width="295" height="85" alt="image" src="https://github.com/user-attachments/assets/a3d2413a-e0f0-47ec-ae59-bb6ac56108bf" />
+Here I have added the code to update the value of the address pointer p is pointing to:
+<img width="180" height="37" alt="image" src="https://github.com/user-attachments/assets/c43a0817-ad83-4aeb-9a74-931220184474" />
+<img width="180" height="37" alt="image" src="https://github.com/user-attachments/assets/c43a0817-ad83-4aeb-9a74-931220184474" />
+
