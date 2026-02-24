@@ -82,9 +82,117 @@ Essentially:
 - 	*p = &a - this means that p gets a copy of the address, not the value of a.
 
 # Pointers - False Assumptions
+## 1. 
+<img width="130" height="33" alt="image" src="https://github.com/user-attachments/assets/5cddd50e-3448-4b4a-be57-bd70286d3436" />
+
+At first, I was confused why this line changes the value b in the code below:
+
+Essentially 
+
+```cpp
+*p = 100
+```
+
+Means: go to the memory address stored in p and write a value there (100)
+In other words:
+
+```cpp
+b = 100
+```
+## 2. 
+After we add: 
+
+```cpp
+p++;
+*p = 200;
+```
+
+we get: 
+
+<img width="547" height="100" alt="image" src="https://github.com/user-attachments/assets/7985ae11-bb9b-4821-ace3-4b6d78fe3483" />
 
 
+After moving the pointer to the next integer-sized memory location, p no longer points to &b and its stored value.
+- p points to something random
+- after doing *p = 200
+- 	may be writing to memory which does not belong to us
+- *We may only use p++ if p points into an array* because we know which values we are accessing.
+- such as:
 
+```cpp
+int arr[3] = {10, 20, 30};
+int *p = arr;
+
+p++;   // now points to arr[1]
+*p = 100;  // safe
+```
+
+# Pointers - The crash
+
+After adding a breakpoint, the instruction ... looking at the registers used and the memory on the stack, we can see that the memory location we are trying to write to, is not a valid memory location
+
+<img width="279" height="50" alt="image" src="https://github.com/user-attachments/assets/97e343df-3a1b-4a7a-a725-47edc518ea01" />
+
+This is because we do not control the stack and how its contents are managed. 
+
+
+# Pointers - Pointers to Pointers
+
+```cpp
+void functionD() {
+	double x = 3.14;
+	double *q = &x;
+
+
+	cout << "x= " << x << endl;
+
+	double *p = q; // p points to q
+	*p = 3.21; // modify x through p
+
+	cout << "x= " << x << endl;
+}
+```
+
+In this bit of code we have two pointers, one pointing to a value, and another to a pointer.
+- Pointer *p* stores the same memory address as *q*
+- Hence updating the value at which pointer *p* is pointing to, changes the value of x.
+
+<img width="74" height="42" alt="image" src="https://github.com/user-attachments/assets/153b5963-b977-479e-b4b9-26413d67307e" />
+
+ We can see that it is the same for pointer q:
+<img width="483" height="77" alt="image" src="https://github.com/user-attachments/assets/17ff7ced-56b9-40c8-83b3-943790fe4bf8" />
+
+# Pointer Chains
+
+```cpp
+	int* a;
+	int* b;
+	int* c;
+	int* d;
+
+	a = (int*)&b;
+	b = (int*)&c;
+	c = (int*)&d;
+	d = (int*)&a;
+```
+
+In circulat pointer chains, pointers store the addresses of the pointer variables, not the values inside them. 
+
+```cpp
+a = (int*)&b;
+```
+&b gives the address of the pointer variable b, and the cast forces that address into an int*. This means a now points to the variable b, not to whatever b points to
+
+&b = address of b
+(int*) = treat the address of b as if it were an int*
+(int*)&b = take the address of b, and think of it as the address of an int. 
+
+We are using casting to force the compiler to treat the address of a pointer variable as if it were the address of an integer.
+This is because a pointer to a pointer to an int (int**) cannot point to a pointer to an int (int*) as these types are not the same.
+
+  
+
+  
 
 
 
