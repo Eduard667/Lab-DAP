@@ -129,7 +129,17 @@ p++;   // now points to arr[1]
 
 # Pointers - The crash
 
-After adding a breakpoint, the instruction ... looking at the registers used and the memory on the stack, we can see that the memory location we are trying to write to, is not a valid memory location
+After adding a breakpoint, to the instruction:
+<img width="292" height="33" alt="image" src="https://github.com/user-attachments/assets/7f66f7de-cadf-4177-adf7-d433b77ece62" />
+looking at the registers used and the memory on the stack:
+<img width="489" height="176" alt="image" src="https://github.com/user-attachments/assets/bb1a9251-f64f-4e89-be4a-0aff48532b39" />
+<img width="392" height="66" alt="image" src="https://github.com/user-attachments/assets/a5b36106-5803-47c0-9fe0-31b406c50c71" />
+<img width="409" height="121" alt="image" src="https://github.com/user-attachments/assets/b868f8b6-51e0-4226-abc5-7f3f777d05d9" />
+
+
+
+
+we can see that the memory location we are trying to write to, is not a valid memory location
 
 <img width="279" height="50" alt="image" src="https://github.com/user-attachments/assets/97e343df-3a1b-4a7a-a725-47edc518ea01" />
 
